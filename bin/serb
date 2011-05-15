@@ -15,14 +15,22 @@ class SerbLocals < OpenStruct
     binding
   end
 
-  def method_missing(name, *args, &block)
+  def method_missing(var, *args, &block)
     super
-    return define_variable(name) if args.empty?
+    if args.empty?
+      value = SerbLocals.get_input(var)
+      self.send("#{var}=", value)
+      return value
+    end
   end
 
-  private
+  def self.const_missing(var)
+    value = SerbLocals.get_input(var)
+    const_set(var, value)
+    return value
+  end
 
-  def define_variable(var)
+  def self.get_input(var)
     print "Define \"#{var}\": "
     return gets.chomp
   end
