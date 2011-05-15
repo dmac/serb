@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/dmacdougall/serb"
   s.rubyforge_project = "serb"
 
-  s.summary = "An interactive CLI tool for generating files from .erb templates"
-  s.description = "An interactive CLI tool for generating files from .erb templates"
+  s.summary = "An interactive tool for generating files from .erb templates"
+  s.description = "An interactive tool for generating files from .erb templates"
 
   s.executables = ["serb"]
   s.files = %w[
