@@ -1,5 +1,7 @@
 Use serb to interactively generate an output file from an erb template.
 
+## Usage
+
 template.txt.erb
 
     Hello, <%= name %>
@@ -12,3 +14,6 @@ Usage
     $ cat template.txt
     Hello, Daniel
 
+## Installation
+
+    gem install serb
